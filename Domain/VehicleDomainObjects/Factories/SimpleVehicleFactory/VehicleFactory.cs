@@ -19,7 +19,7 @@ namespace Domain.VehicleDomainObjects.Factories.SimpleVehicleFactory
         {
             var typeToCreate = GetTypeToCreate(carManufacturer);
 
-            if (typeToCreate.Value == null)
+            if (typeToCreate.Failure)
             {
                 return
                     Result<IVehicle>.Fail<IVehicle>($"The {nameof(carManufacturer)} is not in the supported list");
